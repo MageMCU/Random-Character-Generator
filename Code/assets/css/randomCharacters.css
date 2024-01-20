@@ -1,0 +1,340 @@
+/* reset user browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* background-color: #f4f3ed; */
+  background-color: #f4f4f4;
+  /* max-width: 1200px; */
+}
+
+body {
+  padding: 2rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 200;
+}
+
+header section .logo {
+  width: 100%;
+  /* padding-top: 1vh; */
+
+  /* Logo Colors */
+  /* color: rgb(71, 127, 251); */
+  /* color: rgb(46, 61, 251); */
+  /* color: rgb(45, 53, 237); */
+
+  /* TODO: remove */
+  /* border: 1px dashed red; */
+}
+
+header section .mainNavigation {
+  padding: 0.5rem;
+  width: 100%;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: right;
+  word-spacing: 1.2rem;
+  letter-spacing: 0.15rem;
+}
+
+.mainNavigation {
+  width: 95%;
+}
+
+.mainNavigation a {
+  text-decoration: none;
+  color: #777;
+  /* TODO: remove */
+  /* border: 1px dashed red; */
+}
+.mainNavigation a:hover {
+  color: #800;
+}
+
+header section .emptyBox {
+  /* outline: 2px solid rgb(45, 53, 237); */
+  outline: 3px solid rgb(77, 77, 77);
+  background-color: rgb(71, 127, 251);
+  height: 0.25rem;
+}
+
+/* MAIN BEGINS ***************************** */
+
+main {
+  padding-left: 0.5%;
+  padding-top: 20px;
+  padding-right: 0.5%;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+.character-generator {
+  width: 100%;
+  height: 50vh;
+  min-height: 580px;
+  background-image: url(../img/background/background.jpg);
+  background-size: cover;
+  border: 5px solid blue;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  padding-left: 5px;
+  padding-top: 5px;
+  /* padding-right: 20px; */
+  padding-bottom: 5px;
+  line-height: 1.8rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 410px;
+  height: 500px;
+  border-radius: 10px;
+  background: rgba(0, 10, 83, 0.5);
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(25px);
+}
+
+.container h3 {
+  padding: 5px;
+  font-size: 16pt;
+  text-align: center;
+  color: #f4f4f4;
+}
+
+fieldset {
+  padding-left: 30px;
+}
+
+.characters__title {
+  padding: 5px;
+  font-size: 16pt;
+  text-align: left;
+  color: #f4f4f4;
+}
+
+.character {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 35px;
+  border-radius: 10px;
+  background: rgba(50, 53, 96, 0.783);
+}
+
+.character__input {
+  margin-left: 15px;
+  width: 390px;
+  display: flex;
+  justify-content: center;
+}
+
+.character__function {
+  padding: 20px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  column-gap: 15px;
+}
+
+.character__icon {
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.character__result {
+  width: 280px;
+  height: 30px;
+  padding: 6px;
+  font-size: 1rem;
+  color: #e3edf7;
+  text-align: left;
+  background: rgba(50, 53, 96, 0.783);
+}
+
+.characters-container {
+  padding-left: 24px;
+  padding-right: 24px;
+  align-items: center;
+}
+
+.length-container {
+  padding: 10px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e3edf7;
+}
+
+.length__title {
+  display: flex;
+  align-items: center;
+}
+
+.length__title-text {
+  margin-right: 1px;
+}
+
+.length__value {
+  font-style: italic;
+}
+
+.length__input-container {
+  display: flex;
+  align-items: center;
+}
+
+.length__button {
+  cursor: pointer;
+}
+
+.length__icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.length__input {
+  /* -webkit-appearance: none; */
+  appearance: none;
+  width: 120px;
+  margin: 0 10px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #e3edf7;
+}
+
+.length__input::-webkit-slider-thumb {
+  /* -webkit-appearance: none; */
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(4, 134, 0, 0.85);
+  cursor: pointer;
+}
+
+.user__setting-label {
+  font-size: 1.2rem;
+  color: #e3edf7;
+}
+
+.user__setting-label span {
+  font-size: 1rem;
+  font-style: italic;
+}
+
+p {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #e3edf7;
+}
+
+.generate-character__btn {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.generate-character__btn button {
+  width: 300px;
+  height: 30px;
+
+  color: #e3edf7;
+  font-size: 18px;
+  font-weight: 400;
+
+  background-color: rgba(50, 53, 96, 0.783);
+  border-radius: 10px;
+}
+
+/* MAIN ENDS ******************************* */
+
+footer {
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.fa-ebay {
+  font-size: 2.2rem;
+}
+
+footer section .emptyBox {
+  /* outline: 2px solid rgb(45, 53, 237); */
+  outline: 3px solid rgb(77, 77, 77);
+  background-color: rgb(71, 127, 251);
+  height: 0.25rem;
+}
+
+footer section h2 {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+.social-media {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  /* TODO: remove */
+  /* border: 1px dashed red; */
+}
+
+.social-media a {
+  height: 75px;
+  width: 75px;
+  color: #777;
+  margin: 0 15px;
+  border-radius: 8px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  color: #800;
+}
+
+.rights {
+  width: 100%;
+  /* TODO: remove */
+  /* border: 1px dashed red; */
+}
+
+.privacy {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* outline: 2px solid rgb(45, 53, 237); */
+  outline: 3px solid rgb(77, 77, 77);
+  background-color: rgb(71, 127, 251);
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  font-weight: 600;
+  /* TODO: remove */
+  /* border: 1px dashed red; */
+}
+footer section a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #e3edf7;
+}
+footer section a:hover {
+  color: #004;
+}

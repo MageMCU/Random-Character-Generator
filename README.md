@@ -1,11 +1,11 @@
-# Random-Character-Generator
-- Object Oriented Program Class: Random Character Generator (RCG)
+# Random-Character-Generator (RCG)
+- Object Oriented Programming using the keyword **Class**.
 
 ## HTML5
 - Semantic HTML
     - Header
     - Main
-        - Random Character Generator HTML
+        - RCG HTML tags
     - Footer
 
 ## CSS3
@@ -16,11 +16,11 @@
 
 ## Javscript
 - RCG - Object Orented Programming (OOP)
-    - Class: RandomCharacters
-    - Object: randomCharacters
+    - **Class**: RandomCharacters
+    - **Object**: randomCharacters
 
 ## Progress
-- 20240118: Attempting an entire ancapsulation that includes DOM objects.
+- **20240118**: Attempting an entire encapsulation that includes the DOM objects.
 
 ## Issues
 - check mark not incorporated...

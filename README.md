@@ -21,7 +21,7 @@
 
 ## Progress
 - **20240118**: Attempting an entire encapsulation that includes the DOM objects.
-- **20240121**: Encapsulated DOM objects. The function call are using the getters and setters from the class object.
+- **20240121**: Encapsulated DOM objects. The function calls are now using the getters and setters, and class methods from the class object.
 
 ## Issues
 - check mark not incorporated...

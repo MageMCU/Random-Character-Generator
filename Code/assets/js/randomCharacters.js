@@ -3,16 +3,26 @@
 // Class: RandomCharacters
 // Object: randomCharacters
 // DATE: 20240114
-// Update: 20240121
-// References: ------ LEARNING Javascript OOP
+//
+// UPDATE 20240121: ------>
+// ------ • Incorporated DOM objects into class
+//
+// FIXME 20240121 - Line 175: ------>
+// ------ • from randomCharacters.Length
+// ------ • to randomCharacters.Password
+//
+// References: ------> LEARNING Javascript OOP
 // ------ • JS-Books
 // ------ Source:
 // ------ https://github.com/sugarac/JS-Books
 // ------ • Mastering JavaScript Object-Oriented Programming.pdf
 // ------ Source:
 // ------ https://github.com/sugarac/JS-Books/blob/master/Mastering%20JavaScript%20Object-Oriented%20Programming.pdf
-// Original source unknown...
+//
+// The original source unknown... Github.
+//
 // LICENSE: MIT
+//
 
 // TODO: What function calls can be incorporated into the class RandomCharacters?
 
@@ -49,6 +59,10 @@ class RandomCharacters {
   // Upon calling getters and setters,
   // they're not functions so do not use ().
   // For examples, see function calls below...
+  get Password() {
+    return this.#resultEl.value;
+  }
+
   get LengthElement() {
     return this.#lengthEl;
   }
@@ -62,7 +76,7 @@ class RandomCharacters {
   }
 
   // PUBLIC METHODS
-  Password() {
+  Calculate() {
     this.#generatePassword();
     this.#resultEl.value = this.#password;
   }
@@ -139,7 +153,7 @@ const randomCharacters = new RandomCharacters();
 // and placed before the closing </body> tag in which case the defer
 // would not apply...
 // Therefore removed the word defer and moved the script tag... jc
-randomCharacters.Password();
+randomCharacters.Calculate();
 
 // -------------------------------------------------------------- FUNCTION CALLS
 // Minus icon
@@ -163,16 +177,16 @@ randomCharacters.LengthElement.oninput = function () {
 // Generate Characters (password)
 // generateEl.onclick = () => {
 randomCharacters.GenerateElement.onclick = () => {
-  randomCharacters.Password();
+  randomCharacters.Calculate();
 };
 
-// Copy to clipboard
+// Copy to clipboard FIXME [√]
 copy.onclick = () => {
-  navigator.clipboard.writeText(randomCharacters.Length /* resultEl.value */);
+  navigator.clipboard.writeText(randomCharacters.Password /* resultEl.value */);
 };
 
 // Generate Characters icon
 change.onclick = () => {
-  randomCharacters.Password();
+  randomCharacters.Calculate();
   change.style.transform += "rotate(360deg)";
 };

@@ -3,38 +3,81 @@
 // Class: RandomCharacters
 // Object: randomCharacters
 // DATE: 20240114
+// Update: 20240121
+// References: ------ LEARNING Javascript OOP
+// ------ • JS-Books
+// ------ Source:
+// ------ https://github.com/sugarac/JS-Books
+// ------ • Mastering JavaScript Object-Oriented Programming.pdf
+// ------ Source:
+// ------ https://github.com/sugarac/JS-Books/blob/master/Mastering%20JavaScript%20Object-Oriented%20Programming.pdf
+// Original source unknown...
 // LICENSE: MIT
 
-// KEEP DOCUMENT ELEMENTS GLOBAL
-const resultEl = document.getElementById("result");
-const lengthEl = document.getElementById("length");
-const uppercaseEl = document.getElementById("uppercase");
-const lowercaseEl = document.getElementById("lowercase");
-const numbersEl = document.getElementById("numbers");
-const symbolsSet1El = document.getElementById("symbolsSet1");
-const symbolsSet2El = document.getElementById("symbolsSet2");
-const generateEl = document.getElementById("generate");
+// TODO: What function calls can be incorporated into the class RandomCharacters?
 
 // Object-Oriented-Programming (OOP)
-// --------------------------------------------------------------
+// -------------------------------------------------------------- BEGIN of CLASS
 // CLASS: RandomCharacters, INSTANIATED OBJECT: randomCharacters
 // --------------------------------------------------------------
 class RandomCharacters {
   // PRIVATE PROPERTIES
+  #resultEl;
+  #lengthEl;
+  #uppercaseEl;
+  #lowercaseEl;
+  #numbersEl;
+  #symbolsSet1El;
+  #symbolsSet2El;
+  #generateEl;
   #characters;
   #password;
 
-  constructor() {}
+  // Class Constructor
+  constructor() {
+    this.#resultEl = document.getElementById("result");
+    this.#lengthEl = document.getElementById("length");
+    this.#uppercaseEl = document.getElementById("uppercase");
+    this.#lowercaseEl = document.getElementById("lowercase");
+    this.#numbersEl = document.getElementById("numbers");
+    this.#symbolsSet1El = document.getElementById("symbolsSet1");
+    this.#symbolsSet2El = document.getElementById("symbolsSet2");
+    this.#generateEl = document.getElementById("generate");
+  }
+
+  // GETTERS & SETTERS
+  // Upon calling getters and setters,
+  // they're not functions so do not use ().
+  // For examples, see function calls below...
+  get LengthElement() {
+    return this.#lengthEl;
+  }
+
+  get Length() {
+    return this.#lengthEl.value;
+  }
+
+  get GenerateElement() {
+    return this.#generateEl;
+  }
 
   // PUBLIC METHODS
-  password() {
+  Password() {
     this.#generatePassword();
-    resultEl.value = this.#password;
+    this.#resultEl.value = this.#password;
+  }
+
+  Increment() {
+    this.#lengthEl.value++;
+  }
+
+  Decrement() {
+    this.#lengthEl.value--;
   }
 
   // PRIVATE METHODS
   #generatePassword() {
-    const lengthPassword = lengthEl.value;
+    const lengthPassword = this.#lengthEl.value;
     let randomNum;
 
     this.#init();
@@ -48,11 +91,11 @@ class RandomCharacters {
     this.#password = "";
     this.#characters = "";
 
-    if (uppercaseEl.checked) this.#characters += this.#upper();
-    if (lowercaseEl.checked) this.#characters += this.#lower();
-    if (numbersEl.checked) this.#characters += this.#number();
-    if (symbolsSet1El.checked) this.#characters += "#$%^&*";
-    if (symbolsSet2El.checked) this.#characters += "!@(){}[]=<>/,.";
+    if (this.#uppercaseEl.checked) this.#characters += this.#upper();
+    if (this.#lowercaseEl.checked) this.#characters += this.#lower();
+    if (this.#numbersEl.checked) this.#characters += this.#number();
+    if (this.#symbolsSet1El.checked) this.#characters += "#$%^&*";
+    if (this.#symbolsSet2El.checked) this.#characters += "!@(){}[]=<>/,.";
   }
 
   #upper() {
@@ -84,40 +127,52 @@ class RandomCharacters {
     return number;
   }
 }
-// Instaniate Object
+// -------------------------------------------------------------- END of CLASS
+// -----------------------------------------------------------------------------
+// -------------------------------------------------------------- CLASS INSTANIATION
+// Instaniate Object from Class definetion
 const randomCharacters = new RandomCharacters();
-// Initial run after defer html page.
-randomCharacters.password();
 
+// -------------------------------------------------------------- CLASS CALL
+// Initial run after defer html page. NO LONGER USED
+// Note: It may be better to place the script tag from the head tag
+// and placed before the closing </body> tag in which case the defer
+// would not apply...
+// Therefore removed the word defer and moved the script tag... jc
+randomCharacters.Password();
+
+// -------------------------------------------------------------- FUNCTION CALLS
 // Minus icon
 lengthMinus.onclick = function () {
-  lengthEl.value--;
-  lengthCounter.innerHTML = lengthEl.value;
+  randomCharacters.Decrement(); // lengthEl.value--;
+  lengthCounter.innerHTML = randomCharacters.Length; // lengthEl.value;
 };
 
 // Plus icon
 lengthPlus.onclick = function () {
-  lengthEl.value++;
-  lengthCounter.innerHTML = lengthEl.value;
+  randomCharacters.Increment(); // lengthEl.value++;
+  lengthCounter.innerHTML = randomCharacters.Length; // lengthEl.value;
 };
 
 // Enter Length change
-lengthEl.oninput = function () {
-  lengthCounter.innerHTML = lengthEl.value;
+// lengthEl.oninput = function () {
+randomCharacters.LengthElement.oninput = function () {
+  lengthCounter.innerHTML = randomCharacters.Length; // lengthEl.value;
 };
 
 // Generate Characters (password)
-generateEl.onclick = () => {
-  randomCharacters.password();
+// generateEl.onclick = () => {
+randomCharacters.GenerateElement.onclick = () => {
+  randomCharacters.Password();
 };
 
 // Copy to clipboard
 copy.onclick = () => {
-  navigator.clipboard.writeText(resultEl.value);
+  navigator.clipboard.writeText(randomCharacters.Length /* resultEl.value */);
 };
 
 // Generate Characters icon
 change.onclick = () => {
-  randomCharacters.password();
+  randomCharacters.Password();
   change.style.transform += "rotate(360deg)";
 };
